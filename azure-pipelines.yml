@@ -22,15 +22,12 @@ steps:
     OverWrite: true
     preserveTimestamp: true
     
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '- task: AzureFileCopy@5
+- task: AzureFileCopy@5
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/drop/*'
-    azureSubscription: 'Visual Studio Ultimate with MSDN (Bouvet)(ed952f43-e73c-4edb-8add-33484270d336)'
+    AzureSubscription: 'Visual Studio Ultimate with MSDN (Bouvet)(ed952f43-e73c-4edb-8add-33484270d336)'
     Destination: 'AzureBlob'
     storage: 'kwitest2'
-    ContainerName: 'AzurePipeline'
-    BlobPrefix: 'Utils1''
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    ContainerName: 'AzurePipeLine'
+    BlobPrefix: 'Utils1'
+
