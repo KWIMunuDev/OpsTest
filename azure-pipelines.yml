@@ -25,7 +25,7 @@ steps:
 - task: AzureFileCopy@5
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/*'
-    azureSubscription: 'Visual Studio Ultimate with MSDN (Bouvet)(ed952f43-e73c-4edb-8add-33484270d336)'
+    azureSubscription: 'KWIMunuTest - MSDN'
     Destination: 'AzureBlob'
     storage: 'kwitest2'
     ContainerName: 'AzurePipeLine'
