@@ -19,7 +19,22 @@ steps:
     OverWrite: true
     preserveTimestamp: true
     delayBetweenRetries: 
-    
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Appends to build file
+      
+      # Set timestamp and filename
+      $timestamp = Get-Date -Format "HH:mm:ss dd.MM.yyyy"
+      $filename = $(Build.ArtifactStagingDirectory) + "buildlog.txt"
+      $msg = "Last updated:  " + $timestamp
+      
+      # Create file, ignore if exits, append info
+      New-Item $filename -ErrorAction SilentlyContinue
+      Add-Content $filename $msg
+
 - task: AzureFileCopy@5
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/*'
