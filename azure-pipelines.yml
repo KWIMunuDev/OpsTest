@@ -14,7 +14,7 @@ steps:
   inputs:
     SourceFolder: 'Utils1'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\Utils1' 
     CleanTargetFolder: true
     OverWrite: true
     preserveTimestamp: true
@@ -43,5 +43,5 @@ steps:
     Destination: 'AzureBlob'
     storage: 'kwitest2'
     ContainerName: 'AzurePipeLine'
-    BlobPrefix: 'Utils1'
+    BlobPrefix: 'Utils'
 
