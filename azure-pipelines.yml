@@ -18,6 +18,7 @@ steps:
     CleanTargetFolder: true
     OverWrite: true
     preserveTimestamp: true
+    delayBetweenRetries: 
     
 - task: AzureFileCopy@5
   inputs:
