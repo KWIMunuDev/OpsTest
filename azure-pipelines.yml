@@ -30,7 +30,7 @@ steps:
       $timestamp = Get-Date -Format "HH:mm:ss dd.MM.yyyy"
       $folder = '$(Build.ArtifactStagingDirectory)'
       $filename = $folder + "\buildlog.txt"
-      $msg = "Last updated:  " + $timestamp
+      $msg = "Last updated:  " + $timestamp + " UTC"
       
       # Create file, ignore if exits, append info
       New-Item $filename -ErrorAction SilentlyContinue
