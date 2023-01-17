@@ -28,7 +28,7 @@ steps:
       
       # Set timestamp and filename
       $timestamp = Get-Date -Format "HH:mm:ss dd.MM.yyyy"
-      $folder = $(Build.ArtifactStagingDirectory)
+      $folder = '$(Build.ArtifactStagingDirectory)'
       $filename = $folder + "\buildlog.txt"
       $msg = "Last updated:  " + $timestamp
       
